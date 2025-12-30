@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#F5F5F5"
+    android:animateLayoutChanges="true"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File Uploader"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        android:layout_marginBottom="30dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_file_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_marginBottom="40dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/icon_file"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_menu_agenda"
+                app:tint="#2196F3"
+                android:background="#E3F2FD"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_filename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No file selected"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_toEndOf="@id/icon_file"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"/>
+
+            <TextView
+                android:id="@+id/tv_filesize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap below to choose"
+                android:textSize="14sp"
+                android:textColor="#888"
+                android:layout_below="@id/tv_filename"
+                android:layout_alignStart="@id/tv_filename"
+                android:layout_marginTop="4dp"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_success"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:lottie_rawRes="@raw/success_anim"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_action"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Select File"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:background="@drawable/bg_upload_button"
+            android:stateListAnimator="@null"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            android:indeterminateTint="@android:color/white"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>
